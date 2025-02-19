@@ -1,6 +1,4 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:health_app_ui/pages/activity_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -20,31 +18,24 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xff07101F),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: _appBar(),
-        body: ListView(
-          children: [
-            SizedBox(
-              height: 10,
-            ),
-            _welcomeContainer(context),
-            SizedBox(
-              height: 15,
-            ),
-            ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: 10,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                return _activityContainer(index);
-              },
-            ),
-          ],
+    return ListView(
+      children: [
+        SizedBox(
+          height: 10,
         ),
-      ),
+        _welcomeContainer(context),
+        SizedBox(
+          height: 15,
+        ),
+        ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: 10,
+          shrinkWrap: true,
+          itemBuilder: (context, index) {
+            return _activityContainer(index);
+          },
+        ),
+      ],
     );
   }
 
@@ -55,7 +46,7 @@ class _HomePageState extends State<HomePage> {
           margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
           padding: EdgeInsets.all(15),
           decoration: BoxDecoration(
-            color: Colors.blue,
+            color: Colors.white.withOpacity(.05),
             borderRadius: BorderRadius.circular(20),
           ),
           child: Row(
@@ -178,10 +169,19 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.grey.withOpacity(.3),
                   borderRadius: BorderRadius.circular(15),
                 ),
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  '3o days left',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(15),
+                    onTap: () {},
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      child: Text(
+                        '3o days left',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -194,58 +194,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-    );
-  }
-
-  AppBar _appBar() {
-    return AppBar(
-      backgroundColor: Colors.transparent,
-      leadingWidth: 100,
-      scrolledUnderElevation: 0,
-      leading: Align(
-        alignment: Alignment.centerLeft,
-        child: Container(
-          height: 40,
-          width: 40,
-          margin: EdgeInsets.only(left: 15),
-          decoration: BoxDecoration(
-            color: Colors.grey.withOpacity(.3),
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(15),
-            onTap: () {},
-            child: Icon(
-              Icons.arrow_back_ios_new,
-              color: Colors.white,
-              size: 10,
-            ),
-          ),
-        ),
-      ),
-      actions: [
-        Align(
-          alignment: Alignment.centerRight,
-          child: Container(
-            height: 40,
-            width: 40,
-            margin: EdgeInsets.symmetric(horizontal: 15),
-            decoration: BoxDecoration(
-              color: Colors.grey.withOpacity(.3),
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: InkWell(
-              borderRadius: BorderRadius.circular(15),
-              onTap: () {},
-              child: Icon(
-                Icons.more_vert,
-                color: Colors.white,
-                size: 20,
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }

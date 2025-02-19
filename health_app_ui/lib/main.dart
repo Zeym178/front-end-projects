@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_app_ui/pages/home_page.dart';
+import 'package:health_app_ui/pages/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Health App',
       theme: ThemeData.dark(),
-      home: HomePage(),
+      home: MainPage(),
     );
   }
 }
