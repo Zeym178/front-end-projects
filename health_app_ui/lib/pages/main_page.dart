@@ -1,7 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:health_app_ui/pages/activity_page.dart';
+import 'package:health_app_ui/pages/aux1.dart';
+import 'package:health_app_ui/pages/history_page.dart';
 import 'package:health_app_ui/pages/home_page.dart';
+import 'package:health_app_ui/components/myappbar.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -22,10 +24,12 @@ class _MainPageState extends State<MainPage> {
 
   final bodies = [
     HomePage(),
-    ActivityPage(),
-    ActivityPage(),
-    ActivityPage(),
+    aux1(),
+    HistoryPage(),
+    aux1(),
   ];
+
+  final titles = ['Home', '...', 'History', 'Profile'];
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +38,10 @@ class _MainPageState extends State<MainPage> {
       child: Scaffold(
         extendBody: true,
         backgroundColor: Colors.transparent,
-        appBar: _appBar(),
+        appBar: myAppBar(
+          title: titles[bottomNavIndex],
+          goBack: false,
+        ),
         body: bodies[bottomNavIndex],
         bottomNavigationBar: CurvedNavigationBar(
           animationDuration: Duration(milliseconds: 300),
@@ -48,58 +55,6 @@ class _MainPageState extends State<MainPage> {
           }),
         ),
       ),
-    );
-  }
-
-  AppBar _appBar() {
-    return AppBar(
-      backgroundColor: Colors.transparent,
-      leadingWidth: 100,
-      scrolledUnderElevation: 0,
-      leading: Align(
-        alignment: Alignment.centerLeft,
-        child: Container(
-          height: 40,
-          width: 40,
-          margin: EdgeInsets.only(left: 15),
-          decoration: BoxDecoration(
-            color: Colors.grey.withOpacity(.3),
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(15),
-            onTap: () {},
-            child: Icon(
-              Icons.arrow_back_ios_new,
-              color: Colors.white,
-              size: 10,
-            ),
-          ),
-        ),
-      ),
-      actions: [
-        Align(
-          alignment: Alignment.centerRight,
-          child: Container(
-            height: 40,
-            width: 40,
-            margin: EdgeInsets.symmetric(horizontal: 15),
-            decoration: BoxDecoration(
-              color: Colors.grey.withOpacity(.3),
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: InkWell(
-              borderRadius: BorderRadius.circular(15),
-              onTap: () {},
-              child: Icon(
-                Icons.more_vert,
-                color: Colors.white,
-                size: 20,
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }

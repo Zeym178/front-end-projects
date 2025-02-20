@@ -1,16 +1,11 @@
-# health_app_ui
+# Health App UI
 
-A new Flutter project.
+Este proyecto es **únicamete un frontend desarrollado en Flutter.** La interfaz de usuario se inspiró en el diseño realizado por [Sudarsan Roy](https://dribbble.com/shots/25639336-Health-Care-Mobile-App-UI-UX?utm_source=Clipboard_Shot&utm_campaign=sudarshanroy009&utm_content=Health%20Care%20Mobile%20App%20UI%2FUX&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=sudarshanroy009&utm_content=Health%20Care%20Mobile%20App%20UI%2FUX&utm_medium=Social_Share). El resultado se puede visualizar en el siguiente gif:
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<table>
+<tr>
+<td>
+<img src="assets/images/gifs/app.gif" alt="Apps Gif"></img>
+</td>
+</tr>
+</table>

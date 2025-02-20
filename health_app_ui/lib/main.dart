@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Health App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: MainPage(),
     );

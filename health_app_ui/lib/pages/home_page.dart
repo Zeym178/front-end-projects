@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:health_app_ui/models/activity_model.dart';
+import 'package:health_app_ui/pages/activity_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,11 +11,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isPressed = false;
+  var activities = [];
 
-  void pressActivity() {
-    setState(() {
-      isPressed = !isPressed;
-    });
+  void getActivities() {
+    activities = ActivityModel.getActivities();
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    getActivities();
+    super.initState();
   }
 
   @override
@@ -29,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         ),
         ListView.builder(
           physics: NeverScrollableScrollPhysics(),
-          itemCount: 10,
+          itemCount: activities.length,
           shrinkWrap: true,
           itemBuilder: (context, index) {
             return _activityContainer(index);
@@ -90,7 +98,8 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('10 Exercises'),
+                      Text(activities[index].exercises.toString() +
+                          ' Exercises'),
                     ],
                   ),
                 ),
@@ -112,7 +121,16 @@ class _HomePageState extends State<HomePage> {
               color: Colors.transparent,
               child: InkWell(
                 borderRadius: BorderRadius.circular(20),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ActivityPage(
+                        activity: activities[index],
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
           ),
