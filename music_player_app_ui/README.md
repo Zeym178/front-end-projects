@@ -1,16 +1,10 @@
-# music_player_app_ui
+# Music Player UI
 
-A new Flutter project.
+Este proyecto, es un frontend de 2 paginas de un reproductor de musica, el cual fue inspirado por el diseño de [Abdullah](https://dribbble.com/shots/25496658-Music-Player-Mobile-App?utm_source=Clipboard_Shot&utm_campaign=uimamun615&utm_content=Music%20Player%20Mobile%20App&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=uimamun615&utm_content=Music%20Player%20Mobile%20App&utm_medium=Social_Share). El resultado se puede visualizar en los siguiente gifs:
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<table>
+<tr>
+<td><img src="assets/gifs/app_light.gif"></img><td>
+<td><img src="assets/gifs/app_dark.gif"></img><td>
+<tr>
+</table>
